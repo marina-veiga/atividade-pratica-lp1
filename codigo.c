@@ -10,9 +10,14 @@ void somaElementos(int linha, int colunas, int **mat);
 
 int main(){
     srand(time(NULL)); // inicia o gerador de números aleatórios
-    int linhas, colunas; 
-    printf("informe a quantidade de linhas e colunas da matriz:"); 
-    scanf("%d %d",&linhas,&colunas);
+    int linhas, colunas;
+
+    printf("informe as dimensoes da matriz:\n");
+    printf("quantidade de linhas: ");
+    scanf("%d", &linhas);
+
+    printf("quantidade de colunas: ");
+    scanf("%d", &colunas);
 
     // alocação da matriz de forma dinâmica
     // primeiro, aloco o vetor de linhas (cada linha é um ponteiro para inteiros)
@@ -34,8 +39,8 @@ int main(){
     printf("\nMatriz:\n");
     preencherMat(matriz,linhas,colunas); // preenche a matriz com números aleatórios
     mostrarMat(matriz,linhas,colunas); // mostra a matriz na tela
-    somaElementos(linhas,colunas,matriz); // soma os elementos de cada linha
     zerarDiagonalPrincipal(matriz,linhas,colunas); // zera a diagonal principal e mostra o resultado
+    somaElementos(linhas,colunas,matriz); // soma os elementos de cada linha
 
     // liberação da memória
     // primeiro a liberação de cada linha
